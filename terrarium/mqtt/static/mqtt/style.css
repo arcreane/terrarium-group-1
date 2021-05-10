@@ -1,0 +1,37 @@
+.logo {
+    width: 200px;
+    
+}
+
+.btn-green {
+    background-color: #89b678;
+    border: none !important
+}
+.btn-green:hover {
+    background-color: #89b678;
+    border: none;
+}
+
+a, a:hover, .nav-link{
+    color: #89b678 !important;
+    font-weight: bold
+}
+
+.card-form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.boundary {
+    margin: 0 auto;
+    border: 5px solid #89b678;
+    width: 50%;
+    border-radius: 2px;
+    padding: 20px;
+}
+
+.red {
+    border: 1px solid red;
+    color: red;
+}
+

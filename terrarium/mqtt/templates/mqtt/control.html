@@ -1,0 +1,39 @@
+{% extends 'mqtt/layout2.html' %}
+
+
+{% block middlecontent %}
+
+<div class="row">
+
+
+    <div class="card">
+        <div class="card-body text-center">
+            <h1>Control</h1>
+            <div class="boundary">
+                <input type="range" class="form-range" min="{{data.min_rate}}" max="{{data.max_rate}}" step="10"
+                    id="control">
+                <div class="row">
+                    <div class="col-sm-4 text-center">
+                        Valeur Minimale
+                        {{ data.min_rate }}
+                    </div>
+                    <div class="col-sm-4 red text-center">
+                        Valeur Taux Actuale
+                        <span id="realValue"></span>
+                    </div>
+                    <div class="col-sm-4 text-center">
+                        Valeur Maximale
+                        {{ data.max_rate }}
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+{% load static %}
+<script src="{% static 'mqtt/main.js' %}"></script>
+{% endblock %}

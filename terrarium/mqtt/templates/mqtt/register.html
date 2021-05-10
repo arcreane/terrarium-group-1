@@ -1,0 +1,58 @@
+{% extends 'mqtt/layout.html' %}
+{% load static %}
+
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row" style="text-align:center">
+        {% if success_message %}
+        <div class="alert alert-success" role="alert">
+            {{ success_message }}
+        </div>
+        {% endif %}
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <div class="card card-form ">
+            <div class="card-body">
+                <img src="{% static 'mqtt/logo_1.png' %}" alt="logo" class="logo" />
+                <h1>creer un compte</h1>
+                <form action="{% url 'register' %}" method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <input type="text" name="username" id="username" placeholder="Username" class="form-control"
+                            required>
+
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" name="email" id="email" placeholder="Email" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="password" name="password" id="password" placeholder="Password" class="form-control"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password"
+                            class="form-control" required>
+                    </div>
+                    <button class="btn btn-primary btn-green">Connexion</button>
+                </form>
+                <a href="{% url 'login' %}">connexion</a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+{% endblock %}
